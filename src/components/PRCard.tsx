@@ -7,21 +7,16 @@ interface PRCardProps {
 }
 
 export function PRCard({ pr, rank }: PRCardProps) {
-  const isSixtySeven = pr.votes === 67;
+  const isSixtySeven = pr.votes === 67 || pr.votes === -67;
   return (
-    <a
-      href={pr.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`block w-full p-4 rounded-lg border border-zinc-200 hover:border-zinc-400 transition-colors ${
-        isSixtySeven ? "sixseven-shake" : ""
-      }`}
     <table
       width="100%"
       border={2}
       cellPadding={8}
       cellSpacing={0}
-      className={`pr-card ${rank === 1 ? 'pr-card-leading' : 'pr-card-normal'}`}
+      className={`pr-card ${rank === 1 ? 'pr-card-leading' : 'pr-card-normal'}
+        ${isSixtySeven ? "sixseven-shake" : ""}
+      `}
     >
       <tbody>
         <tr>
