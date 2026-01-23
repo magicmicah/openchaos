@@ -1,6 +1,8 @@
 import { Suspense } from "react";
 import { Countdown } from "@/components/Countdown";
 import { PRList } from "@/components/PRList";
+
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { IE6Layout } from "@/components/IE6Layout";
 import { WebCounter } from "@/components/WebCounter";
 import { HallOfChaos } from "@/components/HallOfChaos";
@@ -9,7 +11,9 @@ export default function Home() {
   return (
     <IE6Layout>
       <Countdown />
-
+      <div className="absolute top-8 right-4">
+        <ThemeToggle />
+      </div>
       <div className="page-container">
         <table width="100%" border={2} cellPadding={15} cellSpacing={0} className="page-main-table">
           <tbody>
